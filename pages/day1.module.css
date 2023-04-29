@@ -1,0 +1,40 @@
+.container {
+  width: 1000px;
+  height: 100%;
+}
+
+.header {
+  background-color: lightblue;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.main {
+  padding: 10px;
+}
+
+.section {
+  background-color: lightgrey;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.column {
+  display: flex;
+}
+
+.row {
+  display: block;
+}
+
+.box {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 130px;
+}
