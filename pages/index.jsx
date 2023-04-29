@@ -4,7 +4,7 @@ import TableOfContent from '../components/TableOfContent';
 
 export default function Index() {
   const days = [
-    'Day 1 - Introduction',
+    'Day 1 - Responsive design and Flexbox',
     'Day 2 - HTML',
   ];
   return (
