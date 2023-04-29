@@ -12,7 +12,6 @@ function TableOfContent({ days }) {
           <li key={day} className={styles.listItem}>
             <Link href={`/day${index + 1}`}>
               {day}
-              {/* <a className={styles.link}>{day}</a> */}
             </Link>
           </li>
         ))}
