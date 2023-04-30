@@ -10,7 +10,7 @@ export default function Day1() {
       <main className={styles.main}>
         <section className={styles.section}>
           <h2>Section 1</h2>
-          <div className={styles.flexContainer}>
+          <div className={styles.columnContainer}>
             <div className={styles.box}>Box 1</div>
             <div className={styles.box}>Box 2</div>
             <div className={styles.box}>Box 3</div>
@@ -19,11 +19,9 @@ export default function Day1() {
         </section>
         <section className={styles.section}>
           <h2>Section 2</h2>
-          <div className={styles.row}>
+          <div className={styles.rowContainer}>
             <div className={styles.box}>Box 5</div>
             <div className={styles.box}>Box 6</div>
-          </div>
-          <div className={styles.row}>
             <div className={styles.box}>Box 7</div>
             <div className={styles.box}>Box 8</div>
           </div>

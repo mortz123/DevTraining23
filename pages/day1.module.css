@@ -5,18 +5,18 @@
 
 .header {
   background-color: lightblue;
-  padding: 10px;
+  padding: 0.625rem;
   font-size: 1.5rem;
 }
 
 .main {
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .section {
   background-color: lightgrey;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 1.125rem;
+  padding: 0.625rem;
 }
 
 .column {
@@ -31,28 +31,36 @@
   justify-content: center;
 }
 
-.flexContainer {
+.columnContainer {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  max-height: 100vh;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-@media (min-width: 440px) {
+/* @media (min-width: 440px) {
   .flexContainer {
     flex-direction: row;
   }
-}
+} */
 
 .box {
   background-color: tomato;
   color: white;
-  padding: 10px;
-  margin: 10px;
+  padding: 0.625rem;
+  margin: 0.625rem;
   font-size: 1.125rem;
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   text-align: center;
   line-height: 130px;
 }
