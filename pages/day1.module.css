@@ -74,10 +74,12 @@
   align-items: center;
   justify-content: center;
   transition: all 250ms ease-in-out;
+  border-radius: 4px;
 }
 
 .box:hover {
   cursor: pointer;
   background-color: #fe583a;
   font-weight: bold;
+  transform: rotate(5deg) scale(1.1);
 }
