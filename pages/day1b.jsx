@@ -7,7 +7,7 @@ export default function Day1b() {
     <div>
       <h1>Day 1 Bonus Challenge</h1>
       <nav className={styles.nav}>
-        <Image src="/vercel.svg" height={80} width={120} />
+        <Image src="/vercel.svg" height={80} width={120} alt="vercel logo" />
         <div className={styles.navItems}>
           <div className={styles.navItem}>Home</div>
           <div className={styles.navItem}>About</div>
@@ -20,6 +20,15 @@ export default function Day1b() {
           <div className={styles.line} />
         </div>
       </nav>
+      <div className={styles.heroSection}>
+        <div className={styles.heroTextContainer}>
+          <span className={styles.heroTextHeader}>Cars Inc.</span>
+          <span className={styles.heroTextInfo}>The best auto mobile company in the world #1.</span>
+        </div>
+        <div className={styles.heroImageContainer}>
+          <Image src="/car.png" fill alt="hero section image" />
+        </div>
+      </div>
     </div>
   );
 }

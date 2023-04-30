@@ -42,3 +42,55 @@
     display: none;
   }
 }
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  padding-inline: 10px;
+}
+
+.heroTextContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.heroTextHeader {
+  font-weight: bold;
+  font-size: 3rem; /* 48px */
+  line-height: 1;
+}
+
+.heroTextInfo {
+  text-align: center;
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+
+.heroImageContainer {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 950px) {
+  .heroSection {
+    flex-direction: row;
+  }
+
+  .heroTextContainer {
+    align-items: flex-start;
+  }
+
+  .heroTextInfo {
+    text-align: start;
+  }
+}
