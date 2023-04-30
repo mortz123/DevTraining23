@@ -22,7 +22,7 @@
 .hamburger {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
   cursor: pointer;
 }
 
@@ -51,6 +51,7 @@
   height: 100vh;
   width: 100%;
   padding-inline: 10px;
+  gap: 3.125rem;
 }
 
 .heroTextContainer {
@@ -59,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .heroTextHeader {
@@ -84,6 +85,7 @@
 @media screen and (min-width: 950px) {
   .heroSection {
     flex-direction: row;
+    padding-inline: 6.25rem;
   }
 
   .heroTextContainer {

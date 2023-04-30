@@ -20,15 +20,19 @@ export default function Day1b() {
           <div className={styles.line} />
         </div>
       </nav>
-      <div className={styles.heroSection}>
+      <section className={styles.heroSection}>
         <div className={styles.heroTextContainer}>
           <span className={styles.heroTextHeader}>Cars Inc.</span>
-          <span className={styles.heroTextInfo}>The best auto mobile company in the world #1.</span>
+          <span className={styles.heroTextInfo}>
+            The best auto mobile company in the world #1.
+            The one and only, you can&apos;t even compare.
+
+          </span>
         </div>
         <div className={styles.heroImageContainer}>
           <Image src="/car.png" fill alt="hero section image" />
         </div>
-      </div>
+      </section>
     </div>
   );
 }
