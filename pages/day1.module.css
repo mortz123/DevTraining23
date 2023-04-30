@@ -9,6 +9,10 @@
   font-size: 1.5rem;
 }
 
+.h1Class {
+  padding-left: 10px;
+}
+
 .main {
   padding: 0.625rem;
 }
@@ -61,6 +65,7 @@
   font-size: 1.125rem;
   width: 9.375rem;
   height: 9.375rem;
+  max-width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
