@@ -19,8 +19,12 @@
 
 .section {
   background-color: lightgrey;
-  margin-bottom: 1.125rem;
+  margin-bottom: 0.625rem;
   padding: 0.625rem;
+}
+
+.section:nth-child(1) {
+  margin-bottom: 3rem;
 }
 
 .column {
