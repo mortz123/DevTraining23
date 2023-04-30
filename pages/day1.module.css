@@ -6,7 +6,7 @@
 .header {
   background-color: lightblue;
   padding: 10px;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .main {
@@ -21,10 +21,28 @@
 
 .column {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .row {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 440px) {
+  .flexContainer {
+    flex-direction: row;
+  }
 }
 
 .box {
@@ -32,7 +50,7 @@
   color: white;
   padding: 10px;
   margin: 10px;
-  font-size: 18px;
+  font-size: 1.125rem;
   width: 150px;
   height: 150px;
   text-align: center;
