@@ -61,6 +61,14 @@
   font-size: 1.125rem;
   width: 9.375rem;
   height: 9.375rem;
-  text-align: center;
-  line-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms ease-in-out;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: #fe583a;
+  font-weight: bold;
 }
