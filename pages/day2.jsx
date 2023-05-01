@@ -35,6 +35,18 @@ function TaskList() {
     }
   };
 
+  const removeTask = (taskID) => {
+    setTasks((prevValue) => {
+      const taskIndex = prevValue.findIndex((t) => t.id === taskID);
+      if (taskIndex !== -1) {
+        const newTasks = [...prevValue];
+        newTasks.splice(taskIndex, 1);
+        return newTasks;
+      }
+      return prevValue;
+    });
+  };
+
   const instructionsText = `
   1. Add an input field for adding new tasks.
   2. Implement a state variable to manage the value of the new task input field.
@@ -62,7 +74,16 @@ function TaskList() {
       )}
       <ul className={styles.list}>
         {tasks.map((task) => (
-          <li key={task.id} className={styles.listItem}>{task.title}</li>
+          <div className={styles.taskContainer} key={task.id}>
+            <li className={styles.listItem}>{task.title}</li>
+            <button
+              className={styles.removeContainer}
+              type="button"
+              onClick={() => removeTask(task.id)}
+            >
+              X
+            </button>
+          </div>
         ))}
       </ul>
       <input placeholder="Add a new task" value={inputValue} onChange={onInputChange} />
