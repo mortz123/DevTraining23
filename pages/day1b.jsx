@@ -1,7 +1,7 @@
 import React from 'react';
 // import Image from 'next/image';
-import styles from './day1b.module.css';
 import Image from 'next/image';
+import styles from './day1b.module.css';
 
 export default function Day1b() {
   return (
