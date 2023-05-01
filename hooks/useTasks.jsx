@@ -9,6 +9,7 @@ function useTasks(initialState) {
       return [...prevValue, {
         id: maxID + 1,
         title: inputValue,
+        completed: false,
       }];
     });
   };
@@ -25,7 +26,23 @@ function useTasks(initialState) {
     });
   };
 
-  return [tasks, addTask, removeTask];
+  const toggleCompleteTask = (taskID) => {
+    setTasks((prevValue) => {
+      const taskIndex = prevValue.findIndex((t) => t.id === taskID);
+      if (taskIndex !== -1) {
+        const newTasks = [...prevValue];
+        const updatedTask = {
+          ...newTasks[taskIndex],
+          completed: !newTasks[taskIndex].completed,
+        };
+        newTasks.splice(taskIndex, 1, updatedTask);
+        return newTasks;
+      }
+      return prevValue;
+    });
+  };
+
+  return [tasks, addTask, removeTask, toggleCompleteTask];
 }
 
 export default useTasks;

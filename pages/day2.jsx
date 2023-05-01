@@ -4,9 +4,9 @@ import styles from './day2.module.css';
 import useTasks from '../hooks/useTasks';
 
 function TaskList() {
-  const [tasks, addTask, removeTask] = useTasks([
-    { id: 1, title: 'Learn React' },
-    { id: 2, title: 'Learn Next.js' },
+  const [tasks, addTask, removeTask, toggleCompleteTask] = useTasks([
+    { id: 1, title: 'Learn React', completed: false },
+    { id: 2, title: 'Learn Next.js', completed: false },
   ]);
   const [showPopup, setShowPopup] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -59,6 +59,14 @@ function TaskList() {
         {tasks.map((task) => (
           <div className={styles.taskContainer} key={task.id}>
             <li className={styles.listItem}>{task.title}</li>
+            {task.completed ? <div>complete</div> : <div>notcomplete</div>}
+            <button
+              className={styles.removeContainer}
+              type="button"
+              onClick={() => toggleCompleteTask(task.id)}
+            >
+              toggle
+            </button>
             <button
               className={styles.removeContainer}
               type="button"
