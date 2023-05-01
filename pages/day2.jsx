@@ -58,7 +58,11 @@ function TaskList() {
       <ul className={styles.list}>
         {tasks.map((task) => (
           <div className={styles.taskContainer} key={task.id}>
-            <li className={styles.listItem}>{task.title}</li>
+            <li className={`${styles.listItem}
+            ${task.completed ? styles.completedTask : ''}`}
+            >
+              {task.title}
+            </li>
             <label htmlFor={`completeCheckbox${task.id}`}>
               <input
                 id={`completeCheckbox${task.id}`}

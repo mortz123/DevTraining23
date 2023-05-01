@@ -25,6 +25,10 @@
   font-size: 1.5rem;
 }
 
+.completedTask {
+  text-decoration: line-through;
+}
+
 .addButton {
   font-size: 1rem;
   padding: 0.5rem 1rem;
