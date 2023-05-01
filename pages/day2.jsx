@@ -59,14 +59,15 @@ function TaskList() {
         {tasks.map((task) => (
           <div className={styles.taskContainer} key={task.id}>
             <li className={styles.listItem}>{task.title}</li>
-            {task.completed ? <div>complete</div> : <div>notcomplete</div>}
-            <button
-              className={styles.removeContainer}
-              type="button"
-              onClick={() => toggleCompleteTask(task.id)}
-            >
-              toggle
-            </button>
+            <label htmlFor={`completeCheckbox${task.id}`}>
+              <input
+                id={`completeCheckbox${task.id}`}
+                type="checkbox"
+                defaultChecked={task.completed}
+                onChange={() => toggleCompleteTask(task.id)}
+              />
+              Completed
+            </label>
             <button
               className={styles.removeContainer}
               type="button"
