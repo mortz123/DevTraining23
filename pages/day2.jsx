@@ -22,8 +22,8 @@ function TaskList() {
   };
 
   const instructionsText = `
-  1. Implement a state variable to manage the value of the new task input field.
-  2. Add an input field for adding new tasks.
+  1. Add an input field for adding new tasks.
+  2. Implement a state variable to manage the value of the new task input field.
   3. Update the addTask function to create a new task based on the input field value.
   4. Add a removeTask function to remove a task by its ID.
   5. Implement a button for each task to remove it.
