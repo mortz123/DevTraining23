@@ -8,6 +8,11 @@ function TaskList() {
     { id: 2, title: 'Learn Next.js' },
   ]);
   const [showPopup, setShowPopup] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const onInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   const openPopup = () => {
     setShowPopup(true);
@@ -18,7 +23,16 @@ function TaskList() {
   };
 
   const addTask = () => {
-    setTasks([...tasks, { id: tasks.length + 1, title: `Task ${tasks.length + 1}` }]);
+    if (inputValue) {
+      setTasks((prevValue) => {
+        const maxID = Math.max(...prevValue.map((task) => task.id));
+        return [...prevValue, {
+          id: maxID + 1,
+          title: inputValue,
+        }];
+      });
+      setInputValue('');
+    }
   };
 
   const instructionsText = `
@@ -51,6 +65,9 @@ function TaskList() {
           <li key={task.id} className={styles.listItem}>{task.title}</li>
         ))}
       </ul>
+      <input placeholder="Add a new task" value={inputValue} onChange={onInputChange} />
+      <br />
+      <br />
       <button type="button" className={styles.addButton} onClick={addTask}>Add Task</button>
     </div>
   );
