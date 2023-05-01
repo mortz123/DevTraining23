@@ -1,6 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import styles from './day1b.module.css';
+import Image from 'next/image';
 
 export default function Day1b() {
   return (
@@ -30,7 +31,22 @@ export default function Day1b() {
           </span>
         </div>
         <div className={styles.heroImageContainer}>
+          {/* <Image src="/car.png" height={30} width={30} alt="an image of a car" /> */}
           <Image src="/car.png" fill alt="hero section image" />
+        </div>
+      </section>
+      <section className={styles.gallerySection}>
+        <div className={styles.heroTextHeader}>Gallery</div>
+        <div className={styles.galleryImages}>
+          <div className={styles.galleryImage}>
+            <Image src="/bg1.jpg" fill alt="background 1" />
+          </div>
+          <div className={styles.galleryImage}>
+            <Image src="/bg2.jpg" fill alt="background 2" />
+          </div>
+          <div className={styles.galleryImage}>
+            <Image src="/bg3.jpg" fill alt="background 3" />
+          </div>
         </div>
       </section>
     </div>

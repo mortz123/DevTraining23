@@ -82,6 +82,27 @@
   position: relative;
 }
 
+.gallerySection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.galleryImages {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  padding-bottom: 1rem;
+}
+
+.galleryImage {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (min-width: 950px) {
   .heroSection {
     flex-direction: row;
