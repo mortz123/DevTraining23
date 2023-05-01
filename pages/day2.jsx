@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Popup from '../components/Popup';
 import styles from './day2.module.css';
+import useTasks from '../hooks/useTasks';
 
 function TaskList() {
-  const [tasks, setTasks] = useState([
+  const [tasks, addTask, removeTask] = useTasks([
     { id: 1, title: 'Learn React' },
     { id: 2, title: 'Learn Next.js' },
   ]);
@@ -22,29 +23,11 @@ function TaskList() {
     setShowPopup(false);
   };
 
-  const addTask = () => {
+  const onAddTask = () => {
     if (inputValue) {
-      setTasks((prevValue) => {
-        const maxID = Math.max(...prevValue.map((task) => task.id));
-        return [...prevValue, {
-          id: maxID + 1,
-          title: inputValue,
-        }];
-      });
+      addTask(inputValue);
       setInputValue('');
     }
-  };
-
-  const removeTask = (taskID) => {
-    setTasks((prevValue) => {
-      const taskIndex = prevValue.findIndex((t) => t.id === taskID);
-      if (taskIndex !== -1) {
-        const newTasks = [...prevValue];
-        newTasks.splice(taskIndex, 1);
-        return newTasks;
-      }
-      return prevValue;
-    });
   };
 
   const instructionsText = `
@@ -89,7 +72,7 @@ function TaskList() {
       <input placeholder="Add a new task" value={inputValue} onChange={onInputChange} />
       <br />
       <br />
-      <button type="button" className={styles.addButton} onClick={addTask}>Add Task</button>
+      <button type="button" className={styles.addButton} onClick={onAddTask}>Add Task</button>
     </div>
   );
 }
