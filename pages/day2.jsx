@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Popup from '../components/Popup';
 import styles from './day2.module.css';
 import useTasks from '../hooks/useTasks';
+import useLocalStorage from '../hooks/useLocalStorage';
+
+const initialTasks = [
+  { id: 1, title: 'Learn React', completed: false },
+  { id: 2, title: 'Learn Next.js', completed: false },
+];
 
 function TaskList() {
-  const [tasks, addTask, removeTask, toggleCompleteTask] = useTasks([
-    { id: 1, title: 'Learn React', completed: false },
-    { id: 2, title: 'Learn Next.js', completed: false },
-  ]);
+  const [storedValue, setStoredValue] = useLocalStorage('tasks', initialTasks);
+  const [tasks, addTask, removeTask, toggleCompleteTask] = useTasks(storedValue, setStoredValue);
   const [showPopup, setShowPopup] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   const onInputChange = (e) => {
     setInputValue(e.target.value);
@@ -43,6 +52,10 @@ function TaskList() {
   10. Style completed tasks with a strike-through.
   11. Implement a useEffect hook to store the tasks in the local storage.
   12. Use the useEffect hook to load the tasks from local storage when the component mounts.`;
+
+  if (!hydrated) {
+    return null;
+  }
 
   return (
     <div className={styles.container}>
